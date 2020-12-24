@@ -1,0 +1,11 @@
+*{
+    /* border: 1px solid black; */
+}
+.space{
+    margin: 0px 5px;
+}
+.screenHeight{
+    max-height: 50vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
