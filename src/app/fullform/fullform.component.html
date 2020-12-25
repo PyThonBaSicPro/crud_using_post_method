@@ -1,38 +1,58 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
 
-    <div class="col-xl-6 col-lg-6 col-12">
-      <div class="card">
-        <div class="card-header text-center bg-success text-white">
-          Create Account
-        </div>
+    <div class="col-xl-8 col-lg-6 col-md-12">
+      <div class="card-header text-center bg-success text-white">
+        Create Account
+      </div>
+     
+       <div class="card p-3">
+        
 
-        <form (ngSubmit)="onSubmit(userForm.value)" #userForm="ngForm">
+        <form (ngSubmit)="onSubmitForm(usersForm.value)" [formGroup]="usersForm">
 
-          <div class="form-group">
-            <label for="firstname">First Name</label>
-            <input type="text" class="form-control" id="firstname" name="firstname" ngModel>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" formControlName="first_name"  required>
+              </div>
+              <small *ngIf="!usersForm.get('first_name').valid && usersForm.get('first_name').touched" class="text-danger">Enter First Name...</small>
+            </div>
+  
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="last_name" formControlName="last_name" >
+              </div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" id="last_name" name="lastname" ngModel>
-          </div>
+          <div class="row">
+           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" formControlName="username"  required>
+            </div>
+           </div>
+  
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="email">Email-ID</label>
+                <input type="email" class="form-control" id="email" formControlName="email_id"  required>
+              </div>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label for="date" class="mr-2">Birth Date</label>
+              <input type="date" name="" id="date" formControlName="birth_date" required>
+            </div>
 
           <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" ngModel>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email-ID</label>
-            <input type="email" class="form-control" id="email" name="email" ngModel>
-          </div>
-
-          <!-- <div class="form-group">
                   <label for="password">Enter Password</label>
-                  <input type="password" class="form-control" id="password" name="password">
-                </div> -->
+                  <input type="password" class="form-control" id="password" formControlName="password"  required>
+                </div>
 
           <!-- <div class="form-group">
                   <label for="confirmpassword">Confirm Password</label>
@@ -40,12 +60,13 @@
                 </div> -->
 
           <button type="submit" class="btn btn-primary w-100">Submit</button>
-          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+          <!-- <button type="submit" class="btn btn-success">Update</button> -->
         </form>
 
-      </div>
+       </div>
+     
     </div>
-    <div class="col-xl-6 col-lg-6 col-12">
+    <div class="col-xl-4 col-lg-6 col-md-12">
       <div class="card">
         <div class="card-header bg-success text-white text-center">
           Account List
@@ -58,10 +79,9 @@
         <div class="card-body shadow screenHeight">
           <ng-container>
             <div class="d-flex justify-content-between mb-2">
-              <h5 class="card-text">Title</h5>
+              <h5 class="card-text">emailID</h5>
               <div class="d-flex justify-content-around">
                 <button class="btn btn-warning space">Edit</button>
-                <button class="btn btn-success space">Update</button>
                 <button class="btn btn-danger space">Delete</button>
               </div>
             </div>

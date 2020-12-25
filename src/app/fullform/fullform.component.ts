@@ -1,7 +1,7 @@
 
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-// import { Account} from "../account.model";
+import { Account} from "../account.model";
 
 
 @Component({
@@ -13,23 +13,25 @@ import { NgForm } from '@angular/forms';
 
 export class FullformComponent implements OnInit {
 
-  @ViewChild("drivenform") drivenform!: NgForm;
-  // account :Account[] =[];
+  // @ViewChild("drivenform") drivenform!: NgForm;
 
   constructor() { 
-  
   }
 
   ngOnInit(): void {
-    
-  }
-  onSubmit(useData:{firstname:string,lastname:string,username:string,password:string}){
-    console.log(useData)
   }
 
+  
 
 
-  // veriables for form
+
+  usersForm:any;
+  onSubmitForm(data:Account){
+    console.log(data)
+  }
+
+
+
   
 
 }

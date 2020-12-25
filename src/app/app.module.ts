@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullformComponent } from './fullform/fullform.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+import { HttpClientModule, HttpClient } from '@angular/common/http';  
+
 // import { HttpClientModule } from "@angular/common/http";
 
 
@@ -17,7 +19,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule,  
+    HttpClientModule, 
+    
     // HttpClientModule
   ],
   providers: [],

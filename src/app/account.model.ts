@@ -1,7 +1,8 @@
 export class Account {
-    first_name:string="";
+    firs_tname:string="";
     last_name:string="";
-    username:string="";
     email_id:string="";
+    username:string="";
     password:string="";
+    birth_date:Date | undefined
 }
